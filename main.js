@@ -1,5 +1,4 @@
-// const playerName = prompt("Skriv ditt namn: ")
-const playerName = "Jens" // statiskt så vi slipper prompt varje körning
+const playerName = "Viktor"
 let playerHp = 100
 let enemyHp = 100
 
