@@ -1,28 +1,40 @@
 const playerName = "Viktor"
-let playerHp = 100
-let enemyHp = 100
+let playerhp = 100
+let enemyhp = 100
 
 function rollDice() {
     return Math.ceil(Math.random() * 6)
 }
 
-console.log(rollDice())
+const playerhpelement = document.querySelector("#player-hp")
+const enemyhpelement = document.querySelector("#enemy-hp")
+const combatlogelement = document.querySelector("#combat-log")
 
-let playerRoll = rollDice()
-let enemyRoll = rollDice()
+function log(msg) {
+    const li = document.createElement("li")
+    li.textContent = msg
+    combatlogelement.appendChild(li)
+}
 
-function gameRound() {
+function gameround() {
+    const playerRoll = rollDice()
+    const enemyRoll = rollDice()
     if (playerRoll > enemyRoll) {
         const damage = playerRoll - enemyRoll
-        console.log(`Du köttar fienden för ${damage}!`)
-        enemyHp -= damage
+        log(`Du köttar fienden för ${damage}!`)
+        enemyhp -= damage
     } else if (enemyRoll > playerRoll) {
         const damage = enemyRoll - playerRoll
-        console.log(`Nedrans, du blir mulad för ${damage}!`)
-        playerHp -= damage
+        log(`Nedrans, du blir mulad för ${damage}!`)
+        playerhp -= damage
     } else {
         console.log("Snyggt parerat, inget händer!")
     }
+    playerhpelement.textContent = playerhp
+    enemyhpelement.textContent = enemyhp
 }
 
-gameRound()
+playerhpelement.textContent = playerhp
+enemyhpelement.textContent = enemyhp
+const playbutton = document.querySelector("#play-button")
+playbutton.addEventListener("click", gameround)
