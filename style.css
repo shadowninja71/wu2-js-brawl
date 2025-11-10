@@ -1,3 +1,19 @@
+body {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+
+    background-color: #9d9d9d9d;
+}
+
+.wrapper {
+    max-width: 56rem;
+    margin-inline: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+
+
 ul {
     list-style: none;
     font-family: monospace;
@@ -6,12 +22,17 @@ ul {
 #combat-log {
     display: flex;
     flex-direction: column-reverse;
+    color: yellow;
+
+    .player {
+        color: green;
+    }
+    .enemy {
+        color: red;
+    }
 }
 
 .low-hp {
     color: red;
     font-weight: bold;
-
-    transition: all 0.2s ease;
-    transform: scale(1.05);
 }
