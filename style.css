@@ -1,0 +1,17 @@
+ul {
+    list-style: none;
+    font-family: monospace;
+}
+
+#combat-log {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.low-hp {
+    color: red;
+    font-weight: bold;
+
+    transition: all 0.2s ease;
+    transform: scale(1.05);
+}
